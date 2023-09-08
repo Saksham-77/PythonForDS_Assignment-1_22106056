@@ -3,12 +3,10 @@ splt = str.split()
 lst = []
 for i in splt:
     lst.append(int(i))
-for _ in range(len(splt)):
-    m = min(lst[_:])
-    if lst[_] == m:
-        pass
-    else:
-        index = lst.index(m)
-        lst[index] = lst[_]
-        lst[_] = m
+for _ in range(len(lst)):
+    for j in range(_, len(lst)):
+        if lst[_] > lst[j]:
+            temp = lst[_]
+            lst[_] = lst[j]
+            lst[j] = temp
 print(lst)
